@@ -1,6 +1,9 @@
 todo.controller("TodoCtl", [
-  '$scope',
+  "$scope",
   function($scope){
+
+    $scope.completedHidden = false;
+
     $scope.tasks = [
       {
         description: "test",
@@ -25,7 +28,7 @@ todo.controller("TodoCtl", [
 
       data.description = null;
       data.date = null;
-    }
+    };
 
     $scope.newTask = function(valid, data, form){
       if(valid){
@@ -39,7 +42,25 @@ todo.controller("TodoCtl", [
 
         $scope.tasks.push(task)
       }
-    }
+    };
+
+    $scope.deleteTask = function deleteTask(task){
+      var index = $scope.tasks.indexOf(task);
+      $scope.tasks.splice(index, 1);
+    };
+
+    $scope.clearCompleted = function clearCompleted(){
+      var tasks = $scope.tasks;
+      var task;
+      for(var i = (tasks.length - 1); i >= 0; i--){
+        task = tasks[i];
+        if (task.complete) $scope.deleteTask(task);
+      }
+    };
+
+    $scope.toggleCompleted = function toggleCompleted(){
+      $scope.completedHidden = !$scope.completedHidden;
+    };
 
   }
 ])
