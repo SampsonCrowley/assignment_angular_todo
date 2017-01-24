@@ -1,0 +1,4 @@
+<td>{{ task.description }}</td>
+<td>{{ task.date | date }}</td>
+<td><input type="checkbox" ng-model="task.complete"></td>
+<td><a ng-click="delete({task: task})">X</a></td>

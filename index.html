@@ -35,7 +35,7 @@
           <button ng-click="clearCompleted()">Clear Completed</button>
         </div>
       </div>
-      <todo-list tasks="tasks"></todo-list>
+      <todo-list tasks="tasks" completed-hidden="completedHidden" delete="deleteTask(task)"></todo-list>
     </main>
 
     <script src="js/app.js" charset="utf-8"></script>
@@ -43,7 +43,11 @@
     <!-- filters -->
     <script src="js/filters/completedFilter.js"></script>
 
+    <!-- services -->
+    <script src="js/services/todo.js" charset="utf-8"></script>
+
     <!-- directives -->
+    <script src="js/directives/todo-item.js"></script>
     <script src="js/directives/todoList.js"></script>
 
     <!-- controller -->

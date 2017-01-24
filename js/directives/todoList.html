@@ -9,11 +9,6 @@
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="task in tasks | completedFilter: completedHidden">
-      <td>{{ task.description }}</td>
-      <td>{{ task.date | date }}</td>
-      <td><input type="checkbox" ng-model="task.complete"></td>
-      <td><a ng-click="deleteTask(task)">X</a></td>
-    </tr>
+    <tr ng-repeat="task in tasks | completedFilter:completedHidden" todo-item task="task" delete="delete({task: task})"><td>
   </tbody>
 </table>
