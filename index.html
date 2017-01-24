@@ -33,6 +33,13 @@
         <div class="col-xs-12">
           <button ng-click="toggleCompleted()">{{ completedHidden ? "Show Completed" : "Hide Completed" }}</button>
           <button ng-click="clearCompleted()">Clear Completed</button>
+          <select ng-model="sortType" ng-change="sort(sortType)">
+            <option value="completed">Completed on Top</option>
+            <option value="uncompleted">Completed on Bottom</option>
+            <option value="earliest">Due Date Desc</option>
+            <option value="latest">Due Date Asc</option>
+            <option value="" selected>None</option>
+          </select>
         </div>
       </div>
       <todo-list tasks="tasks" completed-hidden="completedHidden" delete="deleteTask(task)"></todo-list>
