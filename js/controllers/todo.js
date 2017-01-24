@@ -1,3 +1,4 @@
+
 todo.controller("TodoCtl", [
   "$scope",
   function($scope){
@@ -57,10 +58,9 @@ todo.controller("TodoCtl", [
         if (task.complete) $scope.deleteTask(task);
       }
     };
-
     $scope.toggleCompleted = function toggleCompleted(){
       $scope.completedHidden = !$scope.completedHidden;
     };
+  };
 
-  }
-])
+]);

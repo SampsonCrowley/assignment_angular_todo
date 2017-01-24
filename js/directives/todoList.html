@@ -1,0 +1,19 @@
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Task</th>
+      <th>Date</th>
+      <th>Complete</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="task in tasks | completedFilter: completedHidden">
+      <td>{{ task.description }}</td>
+      <td>{{ task.date | date }}</td>
+      <td><input type="checkbox" ng-model="task.complete"></td>
+      <td><a ng-click="deleteTask(task)">X</a></td>
+    </tr>
+  </tbody>
+</table>
